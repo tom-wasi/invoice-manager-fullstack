@@ -1,7 +1,7 @@
-package com.tmszw.invoicemanagerv2.appuser;
+package invoicemanagerv2.appuser;
 
-import com.tmszw.invoicemanagerv2.AbstractTestcontainers;
-import com.tmszw.invoicemanagerv2.TestConfig;
+import invoicemanagerv2.AbstractTestcontainers;
+import invoicemanagerv2.TestConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

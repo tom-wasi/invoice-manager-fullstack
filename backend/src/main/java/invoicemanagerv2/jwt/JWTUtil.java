@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2.jwt;
+package invoicemanagerv2.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -6,77 +6,79 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
 
 import java.security.Key;
 import java.time.Instant;
 import java.util.Date;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
 
-import static java.time.temporal.ChronoUnit.DAYS;
+import static java.time.temporal.ChronoUnit.MINUTES;
 
-@Service
+@Component
 public class JWTUtil {
 
-    @Value("${jwt.secret-key}")
-    private String secretKey;
+    private static final String secretKey = "foo_12345678990_foo_2234567894523341343246";
 
-    public String issueToken(String subject) {
-        return issueToken(subject, Map.of());
-    }
+    public String issueToken(String username) {
+        Map<String, Object> claims = new HashMap<>();
 
-    public String issueToken(String subject, String... scopes) {
-        return issueToken(subject, Map.of("scopes", scopes));
-    }
-
-    public String issueToken(String subject, List<String> scopes) {
-        return issueToken(subject, Map.of("scopes", scopes));
-    }
-
-    public String issueToken(
-            String subject,
-            Map<String, Object> claims) {
         return Jwts
                 .builder()
                 .setClaims(claims)
-                .setSubject(subject)
+                .setSubject(username)
                 .setIssuer("InvoiceManagerApp")
                 .setIssuedAt(Date.from(Instant.now()))
                 .setExpiration(
                         Date.from(
-                                Instant.now().plus(14, DAYS)
+                                Instant.now().plus(15, MINUTES)
                         )
                 )
-                .signWith(getSignInKey(), SignatureAlgorithm.HS256)
-                .compact();
-    }
-
-    public String getSubject(String token) {
-        return getClaims(token).getSubject();
+                .signWith(getSignKey(), SignatureAlgorithm.HS256).compact();
     }
 
     public Claims getClaims(String token) {
         return Jwts
                 .parserBuilder()
-                .setSigningKey(getSignInKey())
+                .setSigningKey(getSignKey())
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
     }
 
-    private Key getSignInKey() {
+    private Key getSignKey() {
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
-    public boolean isTokenValid(String token, String username) {
-        String subject = getSubject(token);
-        return subject.equals(username) && !isTokenExpired(token);
+    public Date extractExpiration(String token) {
+        return extractClaim(token, Claims::getExpiration);
     }
 
-    public boolean isTokenExpired(String token) {
-        Date now = Date.from(Instant.now());
-        return getClaims(token).getExpiration().before(now);
+    public Boolean isTokenExpired(String token) {
+        return extractExpiration(token).before(new Date());
+    }
+
+    public String extractUserId(String token) {
+        return extractClaim(token, Claims::getSubject);
+    }
+
+    private <T> T extractClaim(String token, Function<Claims, T> claimResolver) {
+        final Claims claims = extractAllClaims(token);
+        return claimResolver.apply(claims);
+    }
+
+    private Claims extractAllClaims(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(getSignKey())
+                .build().parseClaimsJws(token).getBody();
+    }
+
+    public Boolean validateToken(String token, UserDetails userDetails) {
+        final String userId = extractUserId(token);
+        return (userId.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 }

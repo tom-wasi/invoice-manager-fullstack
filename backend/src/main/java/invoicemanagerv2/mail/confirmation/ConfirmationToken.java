@@ -1,6 +1,6 @@
-package com.tmszw.invoicemanagerv2.mail.confirmation;
+package invoicemanagerv2.mail.confirmation;
 
-import com.tmszw.invoicemanagerv2.appuser.AppUser;
+import invoicemanagerv2.appuser.AppUser;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

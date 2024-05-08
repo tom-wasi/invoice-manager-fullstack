@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2.appuser;
+package invoicemanagerv2.appuser;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,7 +7,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.UUID;
 
-import static com.tmszw.invoicemanagerv2.AbstractTestcontainers.FAKER;
+import static invoicemanagerv2.AbstractTestcontainers.FAKER;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 

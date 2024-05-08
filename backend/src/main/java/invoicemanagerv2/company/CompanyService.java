@@ -1,11 +1,12 @@
-package com.tmszw.invoicemanagerv2.company;
+package invoicemanagerv2.company;
 
-import com.tmszw.invoicemanagerv2.appuser.AppUserService;
-import com.tmszw.invoicemanagerv2.exception.CompanyNotFoundException;
-import com.tmszw.invoicemanagerv2.exception.UserNotFoundException;
+import invoicemanagerv2.appuser.AppUser;
+import invoicemanagerv2.appuser.AppUserService;
+import invoicemanagerv2.exception.CompanyNotFoundException;
+import invoicemanagerv2.exception.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
-import com.tmszw.invoicemanagerv2.appuser.AppUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,6 @@ public class CompanyService {
         this.companyDao = companyDao;
         this.companyDTOMapper = companyDTOMapper;
     }
-
     public List<CompanyDTO> getAllUserCompanies(String userId) {
         List<Company> companies = companyDao.findAllUserCompanies(userId);
         List<CompanyDTO> companyDTOS = new ArrayList<>();
@@ -35,13 +35,13 @@ public class CompanyService {
         return companyDTOS;
     }
 
-    public CompanyDTO getCompanyDTOById(Integer companyId) {
+    public CompanyDTO getCompanyDTOById(String companyId) {
         return companyDTOMapper.apply(companyDao.selectCompanyByCompanyId(companyId).orElseThrow(
                 () -> new CompanyNotFoundException(("company with id: [%s] not found".formatted(companyId)))
         ));
     }
 
-    public Company getCompanyById(Integer companyId) {
+    public Company getCompanyById(String companyId) {
         return companyDao.selectCompanyByCompanyId(companyId).orElseThrow(
                 () -> new CompanyNotFoundException(("company with id: [%s] not found".formatted(companyId)))
         );
@@ -66,7 +66,7 @@ public class CompanyService {
         companyDao.insertCompany(newCompany);
     }
 
-    public void deleteCompany(Integer companyId) {
+    public void deleteCompany(String companyId) {
         Company existingCompany = companyDao.selectCompanyByCompanyId(companyId).orElseThrow(
                 () -> new CompanyNotFoundException(("company with id: [%s] not found".formatted(companyId)))
         );
@@ -76,7 +76,7 @@ public class CompanyService {
         }
     }
 
-    public void updateCompany(Integer companyId, CompanyUpdateRequest updateRequest) {
+    public void updateCompany(String companyId, CompanyUpdateRequest updateRequest) {
 
         Company existingCompany = companyDao.selectCompanyByCompanyId(companyId).orElseThrow(
                 () -> new CompanyNotFoundException(("company with id: [%s] not found".formatted(companyId)))
@@ -99,7 +99,7 @@ public class CompanyService {
         companyDao.updateCompany(existingCompany);
     }
 
-    public boolean existsById(Integer companyId) {
+    public boolean existsById(String companyId) {
         return companyDao.existsCompanyWithId(companyId);
     }
 }

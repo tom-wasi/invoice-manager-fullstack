@@ -1,9 +1,9 @@
-package com.tmszw.invoicemanagerv2.appuser;
+package invoicemanagerv2.appuser;
 
-import com.tmszw.invoicemanagerv2.exception.UserNotFoundException;
-import com.tmszw.invoicemanagerv2.mail.MailService;
-import com.tmszw.invoicemanagerv2.mail.confirmation.ConfirmationToken;
-import com.tmszw.invoicemanagerv2.mail.confirmation.ConfirmationTokenRepository;
+import invoicemanagerv2.exception.UserNotFoundException;
+import invoicemanagerv2.mail.MailService;
+import invoicemanagerv2.mail.confirmation.ConfirmationToken;
+import invoicemanagerv2.mail.confirmation.ConfirmationTokenRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,7 +17,7 @@ import org.springframework.validation.BindingResult;
 import java.util.Optional;
 import java.util.UUID;
 
-import static com.tmszw.invoicemanagerv2.AbstractTestcontainers.FAKER;
+import static invoicemanagerv2.AbstractTestcontainers.FAKER;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -36,12 +36,7 @@ public class AppUserServiceTest {
 
     @BeforeEach
     void setUp() {
-        underTest = new AppUserService(
-                appUserDao,
-                appUserDTOMapper,
-                passwordEncoder,
-                confirmationTokenRepository,
-                mailService);
+        underTest = new AppUserService(appUserDao, appUserDTOMapper, passwordEncoder, confirmationTokenRepository, mailService);
         underTestSpy = spy(underTest);
     }
 

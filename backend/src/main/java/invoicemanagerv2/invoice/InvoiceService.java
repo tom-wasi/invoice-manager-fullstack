@@ -1,10 +1,10 @@
-package com.tmszw.invoicemanagerv2.invoice;
+package invoicemanagerv2.invoice;
 
-import com.tmszw.invoicemanagerv2.company.Company;
-import com.tmszw.invoicemanagerv2.company.CompanyService;
-import com.tmszw.invoicemanagerv2.exception.InvoiceNotFoundException;
-import com.tmszw.invoicemanagerv2.s3.S3Buckets;
-import com.tmszw.invoicemanagerv2.s3.S3Service;
+import invoicemanagerv2.company.Company;
+import invoicemanagerv2.company.CompanyService;
+import invoicemanagerv2.exception.InvoiceNotFoundException;
+import invoicemanagerv2.s3.S3Buckets;
+import invoicemanagerv2.s3.S3Service;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -25,7 +25,6 @@ import java.util.zip.ZipOutputStream;
 
 @Service
 public class InvoiceService {
-
     private final S3Service s3Service;
     private final S3Buckets s3Buckets;
     private final InvoiceDao invoiceDao;
@@ -47,7 +46,7 @@ public class InvoiceService {
         this.mailSender = mailSender;
     }
 
-    public void uploadInvoiceFile(Integer companyId,
+    public void uploadInvoiceFile(String companyId,
                                   MultipartFile file,
                                   String description) {
 
@@ -97,7 +96,7 @@ public class InvoiceService {
         invoice.setPending(false);
         invoiceDao.updateInvoice(invoice);
     }
-    private void checkIfCompanyExistsOrThrow(Integer companyId) {
+    private void checkIfCompanyExistsOrThrow(String companyId) {
         if (!companyService.existsById(companyId)) {
             throw new InvoiceNotFoundException(
                     "company with id: [%s] not found".formatted(companyId)
@@ -105,7 +104,7 @@ public class InvoiceService {
         }
     }
 
-    public List<InvoiceDTO> getCompanyInvoices(Integer companyId) {
+    public List<InvoiceDTO> getCompanyInvoices(String companyId) {
 
         List<Invoice> invoices = invoiceDao.findAllCompanyInvoices(companyId);
         List<InvoiceDTO> invoiceDTOs = new ArrayList<>();
@@ -123,7 +122,7 @@ public class InvoiceService {
         return invoiceDTOMapper.apply(invoice);
     }
 
-    public void deleteInvoice(Integer companyId, Integer invoiceId) {
+    public void deleteInvoice(String companyId, Integer invoiceId) {
 
         checkIfCompanyExistsOrThrow(companyId);
         Invoice invoice = invoiceDao.selectInvoiceByInvoiceId(invoiceId).orElseThrow(
@@ -142,7 +141,7 @@ public class InvoiceService {
         }
     }
 
-    public void deleteInvoices(Integer companyId, List<Integer> invoiceIds) {
+    public void deleteInvoices(String companyId, List<Integer> invoiceIds) {
 
         List<Invoice> invoices = invoiceDao.selectInvoicesByInvoiceIDs(invoiceIds);
         try {
@@ -155,8 +154,11 @@ public class InvoiceService {
     }
 
     @Async
-    public void sendInvoices(Integer companyId, List<Integer> invoiceIds) throws MessagingException {
+    public void sendInvoices(String companyId, List<Integer> invoiceIds) throws MessagingException {
         Company company = companyService.getCompanyById(companyId);
+
+        if(company.getAccountantEmail() == null || company.getAccountantEmail().length() < 3) return;
+
         List<Invoice> invoices = invoiceDao.selectInvoicesByInvoiceIDs(invoiceIds);
 
         MimeMessage message = mailSender.createMimeMessage();

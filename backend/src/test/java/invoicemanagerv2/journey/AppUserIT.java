@@ -1,12 +1,12 @@
-package com.tmszw.invoicemanagerv2.journey;
+package invoicemanagerv2.journey;
 
 
-import com.tmszw.invoicemanagerv2.TestcontainersTest;
-import com.tmszw.invoicemanagerv2.appuser.AppUser;
-import com.tmszw.invoicemanagerv2.appuser.AppUserDao;
-import com.tmszw.invoicemanagerv2.appuser.AppUserRegistrationRequest;
-import com.tmszw.invoicemanagerv2.appuser.AppUserUpdateRequest;
-import com.tmszw.invoicemanagerv2.exception.UserNotFoundException;
+import invoicemanagerv2.TestcontainersTest;
+import invoicemanagerv2.appuser.AppUser;
+import invoicemanagerv2.appuser.AppUserDao;
+import invoicemanagerv2.appuser.AppUserRegistrationRequest;
+import invoicemanagerv2.appuser.AppUserUpdateRequest;
+import invoicemanagerv2.exception.UserNotFoundException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -20,7 +20,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.Optional;
 
-import static com.tmszw.invoicemanagerv2.AbstractTestcontainers.FAKER;
+import static invoicemanagerv2.AbstractTestcontainers.FAKER;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

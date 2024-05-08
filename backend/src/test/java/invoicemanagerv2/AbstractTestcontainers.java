@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2;
+package invoicemanagerv2;
 
 import com.github.javafaker.Faker;
 import org.flywaydb.core.Flyway;
@@ -41,7 +41,7 @@ public abstract class AbstractTestcontainers {
                     .withPassword("mysecrettestpassword");
 
     @DynamicPropertySource
-    private static void registerDataSourceProperties(
+    protected static void registerDataSourceProperties(
             DynamicPropertyRegistry registry) {
         registry.add("spring.datasource.url",
                 postgreSQLContainer::getJdbcUrl

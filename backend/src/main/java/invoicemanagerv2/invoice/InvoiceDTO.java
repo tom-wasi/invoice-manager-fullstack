@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2.invoice;
+package invoicemanagerv2.invoice;
 
 import java.time.LocalDate;
 

@@ -1,14 +1,13 @@
-package com.tmszw.invoicemanagerv2.invoice;
+package invoicemanagerv2.invoice;
 
-import com.tmszw.invoicemanagerv2.company.Company;
-import com.tmszw.invoicemanagerv2.company.CompanyService;
+import invoicemanagerv2.company.Company;
+import invoicemanagerv2.company.CompanyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 @RequiredArgsConstructor
 @Component
@@ -24,7 +23,7 @@ public class InvoiceRowMapper implements RowMapper<Invoice> {
         invoice.setPending(rs.getBoolean("is_pending"));
         invoice.setLocalDate(rs.getDate("uploaded").toLocalDate());
 
-        Integer companyId = rs.getInt("company_id");
+        String companyId = rs.getString("company_id");
         Company company = companyService.getCompanyById(companyId);
         invoice.setCompany(company);
 

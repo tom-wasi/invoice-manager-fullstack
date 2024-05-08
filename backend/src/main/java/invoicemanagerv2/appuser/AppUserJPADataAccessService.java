@@ -1,6 +1,5 @@
-package com.tmszw.invoicemanagerv2.appuser;
+package invoicemanagerv2.appuser;
 
-import com.tmszw.invoicemanagerv2.exception.UserNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

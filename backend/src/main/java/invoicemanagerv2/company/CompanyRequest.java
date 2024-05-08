@@ -1,7 +1,7 @@
-package com.tmszw.invoicemanagerv2.company;
+package invoicemanagerv2.company;
 
 public record CompanyRequest (
-    String companyName,
-    String accountantEmail
+        String companyName,
+        String accountantEmail
 ){
 }

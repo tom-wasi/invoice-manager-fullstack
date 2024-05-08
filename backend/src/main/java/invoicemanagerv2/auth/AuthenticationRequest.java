@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2.auth;
+package invoicemanagerv2.auth;
 
 public record AuthenticationRequest(
         String email,

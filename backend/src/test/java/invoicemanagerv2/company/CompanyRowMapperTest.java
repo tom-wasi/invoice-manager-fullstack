@@ -1,12 +1,13 @@
-package com.tmszw.invoicemanagerv2.company;
+package invoicemanagerv2.company;
 
-import com.tmszw.invoicemanagerv2.appuser.AppUser;
-import com.tmszw.invoicemanagerv2.appuser.AppUserService;
+import invoicemanagerv2.appuser.AppUser;
+import invoicemanagerv2.appuser.AppUserService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.UUID;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.mock;
@@ -34,7 +35,7 @@ public class CompanyRowMapperTest {
 
         //then
         Company expected = new Company();
-        expected.setCompanyId(1);
+        expected.setCompanyId(UUID.randomUUID().toString());
         expected.setCompanyName("companyName");
         expected.setUser(user);
         expected.setAccountantEmail("accountant@example.com");

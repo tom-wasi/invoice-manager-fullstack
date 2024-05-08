@@ -1,5 +1,4 @@
-package com.tmszw.invoicemanagerv2.company;
-
+package invoicemanagerv2.company;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -19,7 +18,7 @@ public class CompanyJDBCDataAccessService implements CompanyDao {
     }
 
     @Override
-    public Optional<Company> selectCompanyByCompanyId(Integer companyId) {
+    public Optional<Company> selectCompanyByCompanyId(String companyId) {
         var sql = """
                 SELECT
                     company_id,
@@ -55,7 +54,7 @@ public class CompanyJDBCDataAccessService implements CompanyDao {
     }
 
     @Override
-    public boolean existsCompanyWithId(Integer companyId) {
+    public boolean existsCompanyWithId(String companyId) {
         var sql = """
                 SELECT count(company_id)
                 FROM company
@@ -67,7 +66,7 @@ public class CompanyJDBCDataAccessService implements CompanyDao {
     }
 
     @Override
-    public void deleteCompanyByCompanyId(Integer companyId) {
+    public void deleteCompanyByCompanyId(String companyId) {
         var sql = """
                 DELETE
                 FROM company

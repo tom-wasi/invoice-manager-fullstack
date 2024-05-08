@@ -1,34 +1,414 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="05b3c4bd-2b61-4a35-b9fc-a72f70a19008" name="Changes" comment="" />
+    <list default="true" id="05b3c4bd-2b61-4a35-b9fc-a72f70a19008" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/72cbcff3-7f65-4390-a2f3-b881138368fd.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/72cbcff3-7f65-4390-a2f3-b881138368fd/storage_v2/_src_/database/invoice_manager.m3xD9g.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/72cbcff3-7f65-4390-a2f3-b881138368fd/storage_v2/_src_/database/invoice_manager.m3xD9g/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/72cbcff3-7f65-4390-a2f3-b881138368fd/storage_v2/_src_/database/invoice_manager.m3xD9g/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/72cbcff3-7f65-4390-a2f3-b881138368fd/storage_v2/_src_/database/invoice_manager.m3xD9g/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/72cbcff3-7f65-4390-a2f3-b881138368fd/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/72cbcff3-7f65-4390-a2f3-b881138368fd/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/72cbcff3-7f65-4390-a2f3-b881138368fd/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/72cbcff3-7f65-4390-a2f3-b881138368fd/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/db/migration/V1__Initial_Setup.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/InvoiceManagerV2Application.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/appuser/AppUser$AppUserBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/appuser/AppUser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/appuser/AppUserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/appuser/AppUserDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/appuser/AppUserDTOMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/appuser/AppUserDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/appuser/AppUserJDBCDataAccessService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/appuser/AppUserJPADataAccessService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/appuser/AppUserRegistrationRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/appuser/AppUserRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/appuser/AppUserRowMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/appuser/AppUserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/appuser/AppUserUpdateRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/appuser/UserDetailsServiceConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/appuser/UserPrincipal.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/auth/AuthenticationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/auth/AuthenticationRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/auth/AuthenticationResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/auth/AuthenticationService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/company/Company$CompanyBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/company/Company.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/company/CompanyController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/company/CompanyDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/company/CompanyDTOMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/company/CompanyDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/company/CompanyJDBCDataAccessService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/company/CompanyJPADataAccessService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/company/CompanyRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/company/CompanyRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/company/CompanyRowMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/company/CompanyService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/company/CompanyUpdateRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/config/ApplicationConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/config/SecurityConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/config/WebConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/exception/CompanyNotFoundException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/exception/DelegatedAuthEntryPoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/exception/EmailAlreadyInUseException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/exception/InvoiceNotFoundException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/exception/UserNotFoundException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/exception/UserNotVerifiedException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/invoice/Invoice.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/invoice/InvoiceController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/invoice/InvoiceDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/invoice/InvoiceDTOMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/invoice/InvoiceDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/invoice/InvoiceJDBCDataAccessService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/invoice/InvoiceJPADataAccessService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/invoice/InvoiceRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/invoice/InvoiceRowMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/invoice/InvoiceService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/invoice/InvoiceUpdateRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/jwt/JWTAuthenticationFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/jwt/JWTUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/mail/MailService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/mail/confirmation/ConfirmationToken.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/mail/confirmation/ConfirmationTokenRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/s3/FakeS3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/s3/S3Buckets.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/s3/S3Config.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/invoicemanagerv2/s3/S3Service.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/AbstractTestcontainers.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/TestConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/TestcontainersTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/appuser/AppUserJDBCDataAccessServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/appuser/AppUserJPADataAccessServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/appuser/AppUserRepositoryTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/appuser/AppUserRowMapperTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/appuser/AppUserServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/company/CompanyJDBCDataAccessServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/company/CompanyJPADataAccessServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/company/CompanyRepositoryTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/company/CompanyRowMapperTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/company/CompanyServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/invoice/InvoiceJDBCDataAccessServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/invoice/InvoiceJPADataAccessServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/invoice/InvoiceRepositoryTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/invoice/InvoiceRowMapperTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/invoice/InvoiceServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/journey/AppUserIT.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/journey/AuthenticationIT$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/journey/AuthenticationIT$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/journey/AuthenticationIT.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/journey/CompanyIT.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/journey/InvoiceIT.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/test-classes/invoicemanagerv2/s3/S3ServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/.eslintrc.cjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/public/vite.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/main.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/services/client.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/InvoiceManagerV2Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/InvoiceManagerV2Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserDTOMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserDTOMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserJDBCDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserJDBCDataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserJPADataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserJPADataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserRegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserRegistrationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserRowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserRowMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/AppUserUpdateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/UserPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/appuser/UserPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/auth/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/auth/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/auth/AuthenticationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/auth/AuthenticationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/auth/AuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/auth/AuthenticationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/auth/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/auth/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyDTOMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyDTOMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyJDBCDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyJDBCDataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyJPADataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyJPADataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyRowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyRowMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/company/CompanyUpdateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/config/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/exception/CompanyNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/exception/CompanyNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/exception/DelegatedAuthEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/exception/DelegatedAuthEntryPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/exception/EmailAlreadyInUseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/exception/EmailAlreadyInUseException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/exception/InvoiceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/exception/InvoiceNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/exception/UserNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/exception/UserNotVerifiedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/exception/UserNotVerifiedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceDTOMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceDTOMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceJDBCDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceJDBCDataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceJPADataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceJPADataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceRowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceRowMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/invoice/InvoiceUpdateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/jwt/JWTAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/jwt/JWTAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/jwt/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/jwt/JWTUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/mail/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/mail/MailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/mail/confirmation/ConfirmationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/mail/confirmation/ConfirmationToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/mail/confirmation/ConfirmationTokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/mail/confirmation/ConfirmationTokenRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/s3/FakeS3.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/s3/FakeS3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/s3/S3Buckets.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/s3/S3Buckets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/s3/S3Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/s3/S3Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/s3/S3Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/invoicemanagerv2/s3/S3Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/AbstractTestcontainers.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/AbstractTestcontainers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/TestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/TestConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/TestcontainersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/TestcontainersTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/appuser/AppUserJDBCDataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/appuser/AppUserJDBCDataAccessServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/appuser/AppUserJPADataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/appuser/AppUserJPADataAccessServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/appuser/AppUserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/appuser/AppUserRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/appuser/AppUserRowMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/appuser/AppUserRowMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/appuser/AppUserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/appuser/AppUserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/company/CompanyJDBCDataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/company/CompanyJDBCDataAccessServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/company/CompanyJPADataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/company/CompanyJPADataAccessServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/company/CompanyRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/company/CompanyRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/company/CompanyRowMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/company/CompanyRowMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/company/CompanyServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/company/CompanyServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/invoice/InvoiceJDBCDataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/invoice/InvoiceJDBCDataAccessServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/invoice/InvoiceJPADataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/invoice/InvoiceJPADataAccessServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/invoice/InvoiceRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/invoice/InvoiceRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/invoice/InvoiceRowMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/invoice/InvoiceRowMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/invoice/InvoiceServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/invoice/InvoiceServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/journey/AppUserIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/journey/AppUserIT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/journey/AuthenticationIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/journey/AuthenticationIT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/journey/CompanyIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/journey/CompanyIT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/journey/InvoiceIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/journey/InvoiceIT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/s3/S3ServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/invoicemanagerv2/s3/S3ServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/Company.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/Company.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/Invoice.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/Invoice.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/components/CreateCompanyDrawer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/components/CreateCompanyDrawer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/components/CreateInvoiceDrawer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/components/CreateInvoiceDrawer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/components/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/components/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/components/GoBack.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/components/GoBack.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/components/ModifyCompanyDrawer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/components/ModifyCompanyDrawer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/components/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/components/ProtectedRoute.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/components/ProtectedRoute.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/context/AuthContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/layouts/RootLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/layouts/RootLayout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/pages/CompanyDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/pages/CompanyDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/pages/ConfirmAccount.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/pages/ConfirmAccount.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/pages/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/pages/MyAccount.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/pages/MyAccount.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/pages/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/pages/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/pages/UserDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/pages/UserDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/services/notification.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite/invoice-manager-app/src/services/notification.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoice-manager-fullstack.iml" beforeDir="false" afterPath="$PROJECT_DIR$/invoice-manager-fullstack.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2dXZz7vUNwTECCe4K40A7zYnybB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.InvoiceManagerV2Application.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.react/Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppUserJDBCDataAccessServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppUserJPADataAccessServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppUserServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CompanyJDBCDataAccessServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.invoicemanagerv2.appuser in invoice-manager-v2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.invoicemanagerv2.company in invoice-manager-v2.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.InvoiceManagerV2Application.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tmszw/IdeaProjects/invoice-manager-fullstack&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
-}]]></component>
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tmszw\IdeaProjects\invoice-manager-fullstack\backend\src\test\java" />
+      <recent name="C:\Users\tmszw\IdeaProjects\invoice-manager-fullstack\backend\src\main\resources" />
+      <recent name="C:\Users\tmszw\IdeaProjects\invoice-manager-fullstack\backend\src\main\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tmszw\IdeaProjects\invoice-manager-fullstack\frontend\vite\invoice-manager-app\src" />
+      <recent name="C:\Users\tmszw\IdeaProjects\invoice-manager-fullstack\frontend\vite\invoice-manager-app\src\components" />
+      <recent name="C:\Users\tmszw\IdeaProjects\invoice-manager-fullstack\frontend\vite\invoice-manager-app\src\context" />
+      <recent name="C:\Users\tmszw\IdeaProjects\invoice-manager-fullstack\frontend\vite\invoice-manager-app\src\pages" />
+      <recent name="C:\Users\tmszw\IdeaProjects\invoice-manager-fullstack\frontend\docker" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="AppUserJDBCDataAccessServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="invoice-manager-v2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="invoicemanagerv2.appuser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="invoicemanagerv2.appuser" />
+      <option name="MAIN_CLASS_NAME" value="invoicemanagerv2.appuser.AppUserJDBCDataAccessServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppUserJPADataAccessServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="invoice-manager-v2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="invoicemanagerv2.appuser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="invoicemanagerv2.appuser" />
+      <option name="MAIN_CLASS_NAME" value="invoicemanagerv2.appuser.AppUserJPADataAccessServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppUserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="invoice-manager-v2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="invoicemanagerv2.appuser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="invoicemanagerv2.appuser" />
+      <option name="MAIN_CLASS_NAME" value="invoicemanagerv2.appuser.AppUserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CompanyJDBCDataAccessServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="invoice-manager-v2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="invoicemanagerv2.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="invoicemanagerv2.company" />
+      <option name="MAIN_CLASS_NAME" value="invoicemanagerv2.company.CompanyJDBCDataAccessServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="invoicemanagerv2.appuser in invoice-manager-v2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="invoice-manager-v2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="invoicemanagerv2.appuser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="invoicemanagerv2.appuser" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InvoiceManagerV2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="invoicemanagerv2.InvoiceManagerV2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CompanyJDBCDataAccessServiceTest" />
+        <item itemvalue="JUnit.AppUserServiceTest" />
+        <item itemvalue="JUnit.AppUserJPADataAccessServiceTest" />
+        <item itemvalue="JUnit.AppUserJDBCDataAccessServiceTest" />
+        <item itemvalue="JUnit.invoicemanagerv2.appuser in invoice-manager-v2" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -37,6 +417,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710156643653</updated>
+      <workItem from="1710156644756" duration="18915000" />
+      <workItem from="1710233953237" duration="11776000" />
+      <workItem from="1710252097542" duration="10147000" />
+      <workItem from="1710452523657" duration="3437000" />
+      <workItem from="1710604284410" duration="431000" />
+      <workItem from="1710961317295" duration="3937000" />
+      <workItem from="1711016434059" duration="3030000" />
+      <workItem from="1711019895815" duration="23012000" />
+      <workItem from="1711148936365" duration="14000" />
+      <workItem from="1711314116393" duration="6247000" />
+      <workItem from="1711355125068" duration="27917000" />
+      <workItem from="1711448423771" duration="24223000" />
+      <workItem from="1711648352176" duration="4366000" />
+      <workItem from="1711664082886" duration="2940000" />
+      <workItem from="1711717702247" duration="2099000" />
+      <workItem from="1711719809636" duration="2446000" />
+      <workItem from="1714487046258" duration="715000" />
+      <workItem from="1714487869722" duration="592000" />
+      <workItem from="1714651217764" duration="10000" />
+      <workItem from="1714931472610" duration="2000" />
     </task>
     <servers />
   </component>

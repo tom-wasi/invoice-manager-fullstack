@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2.exception;
+package invoicemanagerv2.exception;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

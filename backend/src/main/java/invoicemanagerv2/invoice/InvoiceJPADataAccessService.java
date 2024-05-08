@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2.invoice;
+package invoicemanagerv2.invoice;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -43,7 +43,7 @@ public class InvoiceJPADataAccessService implements InvoiceDao {
     }
 
     @Override
-    public List<Invoice> findAllCompanyInvoices(Integer companyId) {
+    public List<Invoice> findAllCompanyInvoices(String companyId) {
         return invoiceRepository.findAllByCompanyId(companyId);
     }
 }

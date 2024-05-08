@@ -1,8 +1,8 @@
-package com.tmszw.invoicemanagerv2.appuser;
+package invoicemanagerv2.appuser;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.tmszw.invoicemanagerv2.company.Company;
-import com.tmszw.invoicemanagerv2.mail.confirmation.ConfirmationToken;
+import invoicemanagerv2.company.Company;
+import invoicemanagerv2.mail.confirmation.ConfirmationToken;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,20 +12,17 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
-@Table(name = "app_user",
-        uniqueConstraints = {
-                @UniqueConstraint(
-                        name = "user_email_unique",
-                        columnNames = "email"
-                )})
-public class AppUser implements UserDetails {
+@Table(name = "app_user")
+public class AppUser {
 
     public AppUser(String id, String username, String email, String password, boolean isEnabled) {
         this.id = id;
@@ -65,12 +62,13 @@ public class AppUser implements UserDetails {
     )
     private String password;
 
-    @JsonIgnore
+
     @OneToMany(
             mappedBy = "user",
             orphanRemoval = true,
             cascade = CascadeType.PERSIST
     )
+    @JsonIgnore
     Set<Company> companies;
 
     @JsonIgnore
@@ -89,27 +87,14 @@ public class AppUser implements UserDetails {
     private boolean isEnabled;
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_USER"));
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return isEnabled;
+    public String toString() {
+        return "AppUser{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", confirmationToken=" + confirmationToken +
+                ", isEnabled=" + isEnabled +
+                '}';
     }
 }

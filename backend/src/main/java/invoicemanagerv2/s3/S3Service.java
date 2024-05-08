@@ -1,4 +1,5 @@
-package com.tmszw.invoicemanagerv2.s3;
+package invoicemanagerv2.s3;
+
 import org.springframework.stereotype.Service;
 import software.amazon.awssdk.core.ResponseInputStream;
 import software.amazon.awssdk.core.sync.RequestBody;

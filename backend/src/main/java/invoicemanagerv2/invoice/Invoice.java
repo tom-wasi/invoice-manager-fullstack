@@ -1,8 +1,7 @@
-package com.tmszw.invoicemanagerv2.invoice;
+package invoicemanagerv2.invoice;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.tmszw.invoicemanagerv2.company.Company;
+import invoicemanagerv2.company.Company;
 import jakarta.persistence.*;
 import lombok.*;
 

@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2.s3;
+package invoicemanagerv2.s3;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;

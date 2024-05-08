@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2;
+package invoicemanagerv2;
 
 import org.junit.jupiter.api.Test;
 

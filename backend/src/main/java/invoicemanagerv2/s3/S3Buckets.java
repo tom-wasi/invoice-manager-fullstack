@@ -1,4 +1,5 @@
-package com.tmszw.invoicemanagerv2.s3;
+package invoicemanagerv2.s3;
+
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;

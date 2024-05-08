@@ -1,9 +1,9 @@
-package com.tmszw.invoicemanagerv2.company;
+package invoicemanagerv2.company;
 
-import com.tmszw.invoicemanagerv2.appuser.AppUser;
-import com.tmszw.invoicemanagerv2.appuser.AppUserService;
-import com.tmszw.invoicemanagerv2.exception.CompanyNotFoundException;
-import com.tmszw.invoicemanagerv2.exception.UserNotFoundException;
+import invoicemanagerv2.appuser.AppUser;
+import invoicemanagerv2.appuser.AppUserService;
+import invoicemanagerv2.exception.CompanyNotFoundException;
+import invoicemanagerv2.exception.UserNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -12,8 +12,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
-import static com.tmszw.invoicemanagerv2.AbstractTestcontainers.FAKER;
+import static invoicemanagerv2.AbstractTestcontainers.FAKER;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -42,7 +43,7 @@ public class CompanyServiceTest {
         underTestSpy = spy(underTest);
 
         this.company = new Company(
-                1,
+                UUID.randomUUID().toString(),
                 FAKER.company().name(),
                 appUser,
                 FAKER.internet().safeEmailAddress()
@@ -66,7 +67,7 @@ public class CompanyServiceTest {
     @Test
     void getCompany_ShouldThrowWhenReturnEmptyOptional() {
         //given
-        Integer id = 2;
+        String id = UUID.randomUUID().toString();
 
         when(companyDao.selectCompanyByCompanyId(id)).thenReturn(Optional.empty());
         //when
@@ -194,7 +195,7 @@ public class CompanyServiceTest {
     @Test
     void deleteCompany_ShouldThrowWhenCompanyNotFound() {
         //given
-        Integer id = FAKER.number().randomDigit();
+        String id = UUID.randomUUID().toString();
 
         //when
         when(companyDao.selectCompanyByCompanyId(id)).thenReturn(Optional.empty());

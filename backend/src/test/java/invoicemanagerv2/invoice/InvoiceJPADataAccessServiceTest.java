@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2.invoice;
+package invoicemanagerv2.invoice;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,8 +8,9 @@ import org.mockito.MockitoAnnotations;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
-import static com.tmszw.invoicemanagerv2.AbstractTestcontainers.FAKER;
+import static invoicemanagerv2.AbstractTestcontainers.FAKER;
 import static org.mockito.Mockito.*;
 
 public class InvoiceJPADataAccessServiceTest {
@@ -60,7 +61,7 @@ public class InvoiceJPADataAccessServiceTest {
     @Test
     void findAllCompanyInvoices() {
         //given
-        Integer id = FAKER.number().randomDigit();
+        String id = UUID.randomUUID().toString();
 
         //when
         underTest.findAllCompanyInvoices(id);

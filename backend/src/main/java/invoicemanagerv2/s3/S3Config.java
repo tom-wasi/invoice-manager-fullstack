@@ -1,4 +1,5 @@
-package com.tmszw.invoicemanagerv2.s3;
+package invoicemanagerv2.s3;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

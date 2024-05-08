@@ -1,32 +1,39 @@
-import {
-    createContext,
-    useContext,
-    useState
-} from "react";
-import {jwtDecode} from "jwt-decode";
-import {successNotification} from "../../services/notification.jsx";
-import {login as clientLogin} from "../../services/client.jsx"
+import { createContext, useContext, useState, useEffect } from "react";
+import { jwtDecode } from "jwt-decode";
+import { successNotification } from "../services/notification.jsx";
+import { login as clientLogin } from "../services/client.jsx"
+import Cookies from 'js-cookie';
 
 const AuthContext = createContext({});
 
-const AuthProvider = ({children}) => {
-
+const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const storedUser = Cookies.get('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
+
     const login = async (emailAndPassword) => {
         return new Promise((resolve, reject) => {
-            clientLogin(emailAndPassword).then(res => {
-                setUser({
-                    id: res.appUserDTO.id,
-                    username: res.appUserDTO.username,
-                    email: res.appUserDTO.email
-                })
-                resolve();
+            clientLogin(emailAndPassword).then(async (res) => {
+                const { token, appUserDTO } = res;
+                try {
+                    setUser(appUserDTO);
+                    Cookies.set('user', JSON.stringify(appUserDTO));
+                    resolve();
+                } catch (err) {
+                    reject(err.message || 'An error occurred while fetching user details');
+                }
             }).catch(err => {
                 reject(err.message || 'An error occurred');
             })
         })
-    }
-    const register = async (usernameEmailAndPassword) => {
+    };
+
+const register = async (usernameEmailAndPassword) => {
         return new Promise((resolve, reject) => {
             register(usernameEmailAndPassword).then(res => {
                 successNotification(res.data, res.data.message)
@@ -39,9 +46,10 @@ const AuthProvider = ({children}) => {
     }
 
     const logout = () => {
-        localStorage.removeItem("token");
-        setUser(null);
-    }
+            Cookies.remove("token");
+            Cookies.remove('user');
+            setUser(null);
+        }
 
     const isUserAuthenticated = () => {
         const token = localStorage.getItem("token");

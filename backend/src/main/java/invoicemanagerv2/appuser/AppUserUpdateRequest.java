@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2.appuser;
+package invoicemanagerv2.appuser;
 
 public record AppUserUpdateRequest(
         String newUsername,

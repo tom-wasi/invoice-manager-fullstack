@@ -1,9 +1,9 @@
-package com.tmszw.invoicemanagerv2.invoice;
+package invoicemanagerv2.invoice;
 
-import com.tmszw.invoicemanagerv2.AbstractTestcontainers;
-import com.tmszw.invoicemanagerv2.TestConfig;
-import com.tmszw.invoicemanagerv2.appuser.AppUser;
-import com.tmszw.invoicemanagerv2.company.Company;
+import invoicemanagerv2.AbstractTestcontainers;
+import invoicemanagerv2.TestConfig;
+import invoicemanagerv2.appuser.AppUser;
+import invoicemanagerv2.company.Company;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -55,7 +55,7 @@ public class InvoiceRepositoryTest extends AbstractTestcontainers {
         entityManager.flush();
 
         this.company = new Company(
-                FAKER.number().randomDigit(),
+                UUID.randomUUID().toString(),
                 FAKER.company().name(),
                 appUser,
                 FAKER.internet().safeEmailAddress()

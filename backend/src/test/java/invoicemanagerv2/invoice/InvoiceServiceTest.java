@@ -1,9 +1,9 @@
-package com.tmszw.invoicemanagerv2.invoice;
+package invoicemanagerv2.invoice;
 
-import com.tmszw.invoicemanagerv2.company.Company;
-import com.tmszw.invoicemanagerv2.company.CompanyService;
-import com.tmszw.invoicemanagerv2.s3.S3Buckets;
-import com.tmszw.invoicemanagerv2.s3.S3Service;
+import invoicemanagerv2.company.Company;
+import invoicemanagerv2.company.CompanyService;
+import invoicemanagerv2.s3.S3Buckets;
+import invoicemanagerv2.s3.S3Service;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -62,7 +62,7 @@ public class InvoiceServiceTest {
         Integer invoiceId = 1;
         Invoice mockInvoice = mock(Invoice.class);
         Company mockCompany = mock(Company.class);
-        Integer companyId = 1;
+        String companyId = "112341234";
         String invoiceFileId = "111111";
         byte[] expectedFile = new byte[0];
 

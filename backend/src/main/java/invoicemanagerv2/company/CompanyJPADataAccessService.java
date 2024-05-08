@@ -1,6 +1,5 @@
-package com.tmszw.invoicemanagerv2.company;
+package invoicemanagerv2.company;
 
-import com.tmszw.invoicemanagerv2.exception.CompanyNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -14,7 +13,7 @@ public class CompanyJPADataAccessService implements CompanyDao {
     private final CompanyRepository companyRepository;
 
     @Override
-    public Optional<Company> selectCompanyByCompanyId(Integer companyId) {
+    public Optional<Company> selectCompanyByCompanyId(String companyId) {
         return companyRepository.findById(companyId);
     }
     @Override
@@ -23,12 +22,12 @@ public class CompanyJPADataAccessService implements CompanyDao {
     }
 
     @Override
-    public boolean existsCompanyWithId(Integer companyId) {
+    public boolean existsCompanyWithId(String companyId) {
         return companyRepository.existsById(companyId);
     }
 
     @Override
-    public void deleteCompanyByCompanyId(Integer companyId) {
+    public void deleteCompanyByCompanyId(String companyId) {
         companyRepository.deleteById(companyId);
     }
 

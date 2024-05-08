@@ -1,7 +1,7 @@
-package com.tmszw.invoicemanagerv2.invoice;
+package invoicemanagerv2.invoice;
 
-import com.tmszw.invoicemanagerv2.company.Company;
-import com.tmszw.invoicemanagerv2.company.CompanyService;
+import invoicemanagerv2.company.Company;
+import invoicemanagerv2.company.CompanyService;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Date;
@@ -29,7 +29,8 @@ public class InvoiceRowMapperTest {
         when(rs.getDate("uploaded")).thenReturn(Date.valueOf(LocalDate.now()));
 
         Company company = new Company();
-        when(companyService.getCompanyById(1)).thenReturn(company);
+
+        when(companyService.getCompanyById("12345678")).thenReturn(company);
 
         //when
         Invoice actual = invoiceRowMapper.mapRow(rs, 1);

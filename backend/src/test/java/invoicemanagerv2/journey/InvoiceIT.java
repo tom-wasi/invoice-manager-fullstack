@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2.journey;
+package invoicemanagerv2.journey;
 
 public class InvoiceIT {
 

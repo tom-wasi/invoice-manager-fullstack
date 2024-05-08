@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2.mail.confirmation;
+package invoicemanagerv2.mail.confirmation;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

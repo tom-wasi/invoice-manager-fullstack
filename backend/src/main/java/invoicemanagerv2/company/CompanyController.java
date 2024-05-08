@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2.company;
+package invoicemanagerv2.company;
 
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -10,8 +10,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
-import java.util.List;
-
 import java.util.List;
 import java.util.Map;
 
@@ -30,50 +28,60 @@ public class CompanyController {
             List<CompanyDTO> companies = companyService.getAllUserCompanies(userId);
             return ResponseEntity.ok(companies);
         } catch (Exception e) {
-            throw new RuntimeException(e.getMessage());
+            logger.error("There was a problem retrieving companies for user: {}, message: {}", userId, e.getMessage());
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 
     @GetMapping("/{companyId}")
-    @PreAuthorize("hasRole('ROLE_USER')")
-    public CompanyDTO getCompany(@PathVariable("companyId") Integer companyId) {
-        return companyService.getCompanyDTOById(companyId);
+    public ResponseEntity<?> getCompany(@PathVariable("companyId") String companyId) {
+        try {
+            CompanyDTO companyDTO = companyService.getCompanyDTOById(companyId);
+            return ResponseEntity.ok(companyDTO);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    @PreAuthorize("hasRole('ROLE_USER')")
     public ResponseEntity<?> addCompany(@RequestBody CompanyRequest company, @RequestParam String userId) {
-        companyService.addCompany(userId, company);
-        return ResponseEntity.ok().body("Company created successfully!");
+        logger.info("Adding a company for user with id: {}", userId);
+        try {
+            companyService.addCompany(userId, company);
+            logger.info("Successfully added a company for user with id: {}", userId);
+            return ResponseEntity.ok().body("Company created successfully!");
+        } catch (Exception e) {
+            logger.warn("There was a problem creating the company: {}", e.getMessage());
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @DeleteMapping("/{companyId}")
     @ResponseStatus(HttpStatus.OK)
-    @PreAuthorize("hasRole('ROLE_USER')")
-    public ResponseEntity<?> deleteCompany(@PathVariable("companyId") Integer companyId) {
-        companyService.deleteCompany(companyId);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<?> deleteCompany(@PathVariable("companyId") String companyId) {
+        logger.info("Attempting to delete company with id: {}", companyId);
+        try {
+            companyService.deleteCompany(companyId);
+            logger.info("Successfully deleted a company with id: {}", companyId);
+            return ResponseEntity.ok("Company deleted successfully!");
+        } catch (Exception e) {
+            logger.error("There was a problem while deleting the company with id: {}, message: {}", companyId, e.getMessage());
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @PutMapping("/{companyId}")
     @ResponseStatus(HttpStatus.OK)
-    @PreAuthorize("hasRole('ROLE_USER')")
-    public ResponseEntity<?> updateCompany(@PathVariable("companyId") Integer companyId, @RequestBody CompanyUpdateRequest company) {
-        companyService.updateCompany(companyId, company);
-        return ResponseEntity.ok().build();
-    }
-    private void logValidationErrors(BindingResult bindingResult) {
-        bindingResult.getFieldErrors().forEach(error ->
-                logger.warn("Validation error - Field: {}, Message: {}", error.getField(), error.getDefaultMessage()));
-    }
-
-    private Map<String, String> validationErrors(BindingResult bindingResult) {
-        Map<String, String> errors = new HashMap<>();
-
-        bindingResult.getFieldErrors().forEach(error ->
-                errors.put(error.getField(), error.getDefaultMessage()));
-
-        return errors;
+    public ResponseEntity<?> updateCompany(@PathVariable("companyId") String companyId, @RequestBody CompanyUpdateRequest company) {
+        logger.info("Attempting to update a company with id: {}", companyId);
+        try {
+            companyService.updateCompany(companyId, company);
+            logger.info("Successfully updated a company with id: {}", companyId);
+            return ResponseEntity.ok("Company updated successfully!");
+        } catch (Exception e) {
+            logger.error("Error when updating a company with id: {}, message: {}", companyId, e.getMessage());
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }

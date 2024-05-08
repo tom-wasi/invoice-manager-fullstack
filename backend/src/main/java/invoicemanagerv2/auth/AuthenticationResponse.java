@@ -1,6 +1,10 @@
-package com.tmszw.invoicemanagerv2.auth;
+package invoicemanagerv2.auth;
+
+
+import invoicemanagerv2.appuser.AppUserDTO;
 
 public record AuthenticationResponse(
-        String token
+        String token,
+        AppUserDTO appUserDTO
 ) {
 }

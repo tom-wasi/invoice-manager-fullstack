@@ -1,8 +1,6 @@
-package com.tmszw.invoicemanagerv2.invoice;
+package invoicemanagerv2.invoice;
 
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -113,7 +111,7 @@ public class InvoiceJDBCDataAccessService implements InvoiceDao {
     }
 
     @Override
-    public List<Invoice> findAllCompanyInvoices(Integer companyId) {
+    public List<Invoice> findAllCompanyInvoices(String companyId) {
         var sql = """
                 SELECT *
                 FROM invoice

@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2;
+package invoicemanagerv2;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;

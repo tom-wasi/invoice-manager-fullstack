@@ -1,9 +1,8 @@
-package com.tmszw.invoicemanagerv2.company;
-
+package invoicemanagerv2.company;
 
 public record CompanyDTO(
-    Integer id,
-    String companyName,
-    String accountantEmail
+        String id,
+        String companyName,
+        String accountantEmail
 ){
 }

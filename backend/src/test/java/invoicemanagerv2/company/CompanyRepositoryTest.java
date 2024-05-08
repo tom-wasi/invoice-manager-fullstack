@@ -1,7 +1,7 @@
-package com.tmszw.invoicemanagerv2.company;
+package invoicemanagerv2.company;
 
-import com.tmszw.invoicemanagerv2.AbstractTestcontainers;
-import com.tmszw.invoicemanagerv2.appuser.AppUser;
+import invoicemanagerv2.AbstractTestcontainers;
+import invoicemanagerv2.appuser.AppUser;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,6 @@ public class CompanyRepositoryTest extends AbstractTestcontainers {
 
     @Autowired
     private ApplicationContext applicationContext;
-
     private final AppUser appUser = new AppUser();
 
     @BeforeEach
@@ -65,7 +64,7 @@ public class CompanyRepositoryTest extends AbstractTestcontainers {
     @Test
     void existsCompanyById_WillFailWhenNotInDB() {
         //given
-        Integer id = 1;
+        String id = UUID.randomUUID().toString();
 
         //when
         var actual = underTest.existsById(id);

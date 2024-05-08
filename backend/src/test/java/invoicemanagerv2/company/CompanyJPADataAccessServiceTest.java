@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2.company;
+package invoicemanagerv2.company;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,7 +7,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.UUID;
 
-import static com.tmszw.invoicemanagerv2.AbstractTestcontainers.FAKER;
+import static invoicemanagerv2.AbstractTestcontainers.FAKER;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -34,20 +34,20 @@ public class CompanyJPADataAccessServiceTest {
     @Test
     void selectCompanyById() {
         //given
-        Integer id = 1;
+        String companyId = UUID.randomUUID().toString();
 
         //when
-        underTest.selectCompanyByCompanyId(id);
+        underTest.selectCompanyByCompanyId(companyId);
 
         //then
-        verify(companyRepository).findById(id);
+        verify(companyRepository).findById(companyId);
     }
 
     @Test
     void insertCompany() {
         //given
         Company company = new Company(
-                1,
+                UUID.randomUUID().toString(),
                 FAKER.company().name(),
                 FAKER.internet().safeEmailAddress()
         );
@@ -74,7 +74,7 @@ public class CompanyJPADataAccessServiceTest {
     @Test
     void existsCompanyWithId() {
         //given
-        Integer companyId = 1;
+        String companyId = UUID.randomUUID().toString();
 
         //when
         underTest.existsCompanyWithId(companyId);
@@ -86,7 +86,7 @@ public class CompanyJPADataAccessServiceTest {
     @Test
     void deleteCompany() {
         //given
-        Integer companyId = 1;
+        String companyId = UUID.randomUUID().toString();
 
         //when
         underTest.deleteCompanyByCompanyId(companyId);
@@ -99,7 +99,7 @@ public class CompanyJPADataAccessServiceTest {
     void updateCompany() {
         //given
         Company company = new Company(
-                1,
+                UUID.randomUUID().toString(),
                 FAKER.company().name(),
                 FAKER.internet().safeEmailAddress()
         );

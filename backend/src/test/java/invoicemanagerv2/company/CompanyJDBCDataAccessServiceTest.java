@@ -1,8 +1,8 @@
-package com.tmszw.invoicemanagerv2.company;
+package invoicemanagerv2.company;
 
-import com.tmszw.invoicemanagerv2.AbstractTestcontainers;
-import com.tmszw.invoicemanagerv2.appuser.AppUser;
-import com.tmszw.invoicemanagerv2.appuser.AppUserService;
+import invoicemanagerv2.AbstractTestcontainers;
+import invoicemanagerv2.appuser.AppUser;
+import invoicemanagerv2.appuser.AppUserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,6 +22,7 @@ public class CompanyJDBCDataAccessServiceTest extends AbstractTestcontainers {
     private final AppUserService appUserService = Mockito.mock(AppUserService.class);
     private final CompanyRowMapper companyRowMapper = new CompanyRowMapper(appUserService);
     private AppUser appUser;
+
     @BeforeEach
     void setUp() {
         underTest = new CompanyJDBCDataAccessService(
@@ -46,7 +47,7 @@ public class CompanyJDBCDataAccessServiceTest extends AbstractTestcontainers {
         String companyName = FAKER.company().name();
 
         Company company = new Company();
-        company.setCompanyId(1);
+        company.setCompanyId(UUID.randomUUID().toString());
         company.setCompanyName(companyName);
         company.setUser(appUser);
         company.setAccountantEmail(FAKER.internet().safeEmailAddress());
@@ -66,7 +67,7 @@ public class CompanyJDBCDataAccessServiceTest extends AbstractTestcontainers {
     @Test
     void willReturnEmptyWhenSelectCompanyByCompanyId() {
         //given
-        Integer id = 1;
+        String id = UUID.randomUUID().toString();
 
         //when
         var actual = underTest.selectCompanyByCompanyId(id);
@@ -79,7 +80,7 @@ public class CompanyJDBCDataAccessServiceTest extends AbstractTestcontainers {
     void canDeleteCompany() {
         //given
         Company company = new Company();
-        company.setCompanyId(FAKER.number().randomDigitNotZero());
+        company.setCompanyId(UUID.randomUUID().toString());
         company.setCompanyName(FAKER.company().name());
         company.setUser(appUser);
         company.setAccountantEmail(FAKER.internet().safeEmailAddress());
@@ -101,7 +102,7 @@ public class CompanyJDBCDataAccessServiceTest extends AbstractTestcontainers {
     void canUpdateCompany() {
         //given
         Company company = new Company();
-        company.setCompanyId(FAKER.number().randomDigitNotZero());
+        company.setCompanyId(UUID.randomUUID().toString());
         company.setCompanyName(FAKER.company().name());
         company.setUser(appUser);
         company.setAccountantEmail(FAKER.internet().safeEmailAddress());

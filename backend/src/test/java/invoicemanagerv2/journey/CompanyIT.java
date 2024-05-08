@@ -1,14 +1,14 @@
-package com.tmszw.invoicemanagerv2.journey;
+package invoicemanagerv2.journey;
 
-import com.tmszw.invoicemanagerv2.TestcontainersTest;
-import com.tmszw.invoicemanagerv2.appuser.AppUser;
-import com.tmszw.invoicemanagerv2.appuser.AppUserDao;
-import com.tmszw.invoicemanagerv2.appuser.AppUserRegistrationRequest;
-import com.tmszw.invoicemanagerv2.company.Company;
-import com.tmszw.invoicemanagerv2.company.CompanyDTO;
-import com.tmszw.invoicemanagerv2.company.CompanyDao;
-import com.tmszw.invoicemanagerv2.company.CompanyRequest;
-import com.tmszw.invoicemanagerv2.exception.UserNotFoundException;
+import invoicemanagerv2.TestcontainersTest;
+import invoicemanagerv2.appuser.AppUser;
+import invoicemanagerv2.appuser.AppUserDao;
+import invoicemanagerv2.appuser.AppUserRegistrationRequest;
+import invoicemanagerv2.company.Company;
+import invoicemanagerv2.company.CompanyDTO;
+import invoicemanagerv2.company.CompanyDao;
+import invoicemanagerv2.company.CompanyRequest;
+import invoicemanagerv2.exception.UserNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ import reactor.core.publisher.Mono;
 import java.util.List;
 import java.util.Objects;
 
-import static com.tmszw.invoicemanagerv2.AbstractTestcontainers.FAKER;
+import static invoicemanagerv2.AbstractTestcontainers.FAKER;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -153,7 +153,7 @@ public class CompanyIT {
                 updatedCompanyName, updatedAccountantEmail
         );
 
-        Integer companyId = company.id();
+        String companyId = company.id();
 
         webTestClient.put()
                 .uri(COMPANY_PATH + "/{companyId}", companyId)

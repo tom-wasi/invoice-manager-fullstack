@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2.company;
+package invoicemanagerv2.company;
 
 import org.springframework.stereotype.Service;
 

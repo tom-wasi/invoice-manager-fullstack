@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2.appuser;
+package invoicemanagerv2.appuser;
 
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;

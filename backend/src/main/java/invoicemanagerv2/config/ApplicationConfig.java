@@ -1,4 +1,4 @@
-package com.tmszw.invoicemanagerv2.config;
+package invoicemanagerv2.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,9 +9,9 @@ import javax.sql.DataSource;
 
 @Configuration
 public class ApplicationConfig {
-    String url = "jdbc:postgresql://localhost:5434/invoice-manager";
-    String username = "postgres";
-    String password = "mysecretpassword";
+    String url = "jdbc:postgresql://localhost:5432/invoice_manager";
+    String username = "invoiceman";
+    String password = "ZXCVBNMasdfgqwerT";
 
     @Bean
     public DataSource dataSource() {
@@ -24,6 +24,6 @@ public class ApplicationConfig {
 
     @Bean
     public JdbcTemplate jdbcTemplate(DataSource dataSource) {
-        return new JdbcTemplate(dataSource);
+        return new JdbcTemplate(dataSource, true);
     }
 }

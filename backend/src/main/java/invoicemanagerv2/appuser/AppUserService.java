@@ -1,13 +1,16 @@
-package com.tmszw.invoicemanagerv2.appuser;
+package invoicemanagerv2.appuser;
 
-import com.tmszw.invoicemanagerv2.exception.UserNotFoundException;
-import com.tmszw.invoicemanagerv2.mail.MailService;
-import com.tmszw.invoicemanagerv2.mail.confirmation.ConfirmationToken;
-import com.tmszw.invoicemanagerv2.mail.confirmation.ConfirmationTokenRepository;
+import invoicemanagerv2.exception.UserNotFoundException;
+import invoicemanagerv2.mail.MailService;
+import invoicemanagerv2.mail.confirmation.ConfirmationToken;
+import invoicemanagerv2.mail.confirmation.ConfirmationTokenRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
@@ -16,7 +19,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
-public class AppUserService {
+public class AppUserService implements UserDetailsService {
 
     private final AppUserDao appUserDao;
     private final AppUserDTOMapper appUserDTOMapper;
@@ -24,13 +27,11 @@ public class AppUserService {
     private final ConfirmationTokenRepository confirmationTokenRepository;
     private final MailService mailService;
 
-    @Value("${app.base-url}")
-    private String url;
-
-    public AppUserService(@Qualifier("app_user_jpa")
-                          AppUserDao appUserDao,
+    public AppUserService(@Qualifier("app_user_jpa") AppUserDao appUserDao,
                           AppUserDTOMapper appUserDTOMapper,
-                          PasswordEncoder passwordEncoder, ConfirmationTokenRepository confirmationTokenRepository, MailService mailService) {
+                          PasswordEncoder passwordEncoder,
+                          ConfirmationTokenRepository confirmationTokenRepository,
+                          MailService mailService) {
         this.appUserDao = appUserDao;
         this.appUserDTOMapper = appUserDTOMapper;
         this.passwordEncoder = passwordEncoder;
@@ -127,7 +128,7 @@ public class AppUserService {
         mailMessage.setTo(user.getEmail());
         mailMessage.setSubject("Complete the registration!");
         mailMessage.setText("To confirm your account, please click here: "
-                + url + "/api/v1/auth/confirm-account?token=" + confirmationToken.getConfirmationToken());
+                + "http://localhost:5173/confirm-account/" + confirmationToken.getConfirmationToken());
         mailService.sendEmail(mailMessage);
     }
 
@@ -151,5 +152,12 @@ public class AppUserService {
     public boolean getIsEnabled(String email) {
         AppUser appUser = appUserDao.selectAppUserByEmail(email).orElseThrow();
         return appUser.isEnabled();
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Optional<AppUser> user = appUserDao.selectAppUserByEmail(username);
+        return user.map(UserPrincipal::new)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
     }
 }
