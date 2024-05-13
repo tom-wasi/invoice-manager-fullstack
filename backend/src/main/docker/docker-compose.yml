@@ -1,0 +1,17 @@
+services:
+  app:
+    build:
+      context: .
+    image: invoice-manager-con
+    depends_on:
+      - db
+    ports:
+      - "8081:8081"
+    environment:
+
+
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfiledb
+    container_name: db

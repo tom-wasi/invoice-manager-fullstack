@@ -9,9 +9,9 @@ import javax.sql.DataSource;
 
 @Configuration
 public class ApplicationConfig {
-    String url = "jdbc:postgresql://localhost:5432/invoice_manager";
-    String username = "invoiceman";
-    String password = "ZXCVBNMasdfgqwerT";
+    private final String url = "jdbc:postgresql://db:5432/invoice_manager";
+    private final String username = "foo";
+    private final String password = "foo";
 
     @Bean
     public DataSource dataSource() {

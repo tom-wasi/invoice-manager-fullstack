@@ -15,7 +15,6 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-@Builder
 @EqualsAndHashCode
 @Table(name = "company")
 public class Company {

@@ -7,7 +7,7 @@ CREATE TABLE app_user (
 );
 
 CREATE TABLE company(
-    company_id BIGSERIAL PRIMARY KEY,
+    company_id varchar(255) PRIMARY KEY,
     company_name TEXT NOT NULL,
     accountant_email TEXT,
     user_id VARCHAR(255)

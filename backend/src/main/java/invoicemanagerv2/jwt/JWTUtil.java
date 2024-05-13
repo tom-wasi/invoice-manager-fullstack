@@ -21,7 +21,8 @@ import static java.time.temporal.ChronoUnit.MINUTES;
 @Component
 public class JWTUtil {
 
-    private static final String secretKey = "foo_12345678990_foo_2234567894523341343246";
+    @Value("${jwt.secret-key}")
+    private String secretKey;
 
     public String issueToken(String username) {
         Map<String, Object> claims = new HashMap<>();
