@@ -2,7 +2,7 @@
 # Invoice Manager
 
 This is a web app that allows you to upload your company(ies) invoices and send them to your acountant with just one click.
-After creating an account and confirming it via e-mail message, you can create a company attach to it the company's accountant e-mail address. When it's time to settle the invoices, just mark the ones that you want to send and click **send**. The invoices will then appear as **settled**.
+After creating an account and confirming it via e-mail message, you can create a company and attach to it the company's accountant e-mail address. When it's time to settle the invoices, just mark the ones that you want to send and click **send**. The invoices will then appear as **settled**.
 
 
 
